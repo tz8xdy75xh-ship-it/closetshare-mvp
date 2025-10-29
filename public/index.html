@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ClosetShare v3.8（ハイブリッド / 自動送金）</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css"/>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/service-worker.js'));}</script>
+</head>
+<body>
+  <header>
+    <h1>ClosetShare v3.8（ハイブリッド / 自動送金）</h1>
+    <div id="userBox">
+      <input id="name" placeholder="ニックネーム"/>
+      <input id="phone" placeholder="電話（適当でOK）"/>
+      <button id="loginBtn">ログイン/新規</button>
+      <span id="meInfo"></span>
+      <button id="connectBtn" class="secondary">口座登録（Stripe）</button>
+      <span id="connectStatus"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="pane">
+      <h2>出品する</h2>
+      <div class="row">
+        <label>モード</label>
+        <select id="mode">
+          <option value="rent">レンタル</option>
+          <option value="sell">販売</option>
+        </select>
+      </div>
+      <input id="title" placeholder="タイトル（例: ドレス）"/>
+      <input id="city" placeholder="市区町村（例: 大阪市）"/>
+      <div class="row" id="rentFields">
+        <input id="pricePerDay" type="number" placeholder="日額（円）"/>
+        <input id="deposit" type="number" placeholder="デポジット（円）"/>
+      </div>
+      <div class="row" id="sellFields" style="display:none;">
+        <input id="priceSell" type="number" placeholder="販売価格（円）"/>
+      </div>
+      <textarea id="desc" placeholder="説明"></textarea>
+      <button id="listBtn">出品追加</button>
+      <small>※ 保証なし：破損・紛失は当事者間で解決（MVP方針）</small>
+    </section>
+
+    <section class="pane">
+      <h2>一覧 & 取引</h2>
+      <div id="items"></div>
+    </section>
+
+    <section class="pane">
+      <h2>レビュー</h2>
+      <input id="rateTarget" placeholder="相手ユーザーID（例: u1）"/>
+      <input id="stars" type="number" min="1" max="5" placeholder="1~5"/>
+      <input id="comment" placeholder="コメント"/>
+      <button id="rateBtn">送信</button>
+      <div id="rateResult"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small><a href="/terms.html">利用規約・特商法・プライバシー</a></small>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
