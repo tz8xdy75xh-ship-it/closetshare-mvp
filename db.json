@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Alice",
+      "phone": "000-0000",
+      "score": 4.8,
+      "reviews": 5,
+      "role": "user",
+      "stripeAccountId": ""
+    },
+    {
+      "id": "u2",
+      "name": "Bob",
+      "phone": "000-0001",
+      "score": 4.2,
+      "reviews": 3,
+      "role": "user",
+      "stripeAccountId": ""
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "ownerId": "u1",
+      "mode": "rent",
+      "title": "ドレス Sサイズ",
+      "pricePerDay": 1200,
+      "deposit": 3000,
+      "priceSell": null,
+      "images": [],
+      "city": "大阪市",
+      "desc": "結婚式用。クリーニング済み。",
+      "available": true
+    },
+    {
+      "id": "i2",
+      "ownerId": "u2",
+      "mode": "sell",
+      "title": "一眼レフカメラ",
+      "pricePerDay": null,
+      "deposit": null,
+      "priceSell": 45000,
+      "images": [],
+      "city": "名古屋市",
+      "desc": "SDカード付き。",
+      "available": true
+    }
+  ],
+  "bookings": [],
+  "orders": [],
+  "ratings": [],
+  "audit": []
+}
